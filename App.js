@@ -20,7 +20,7 @@ const initialLogo = require("./assets/LogoOnlyFinalUI.png");
 const newLogo = require("./assets/LogoOnly.png");
 const htuBackground = require("./assets/htubg.png")
 const gwFinalBackground = require("./assets/gwnew.png");
-const aboutBackground = require("./assets/aboutbg.png")
+const aboutBackground = require("./assets/abtbg.png")
 const srfsLogo = require("./assets/srfsLogo.png");
 const gwLogo = require("./assets/gwLogo.png");
 const eorLogo = require("./assets/eorLogo.png"); 
@@ -358,9 +358,9 @@ function SFRSAIScreen({ route }) {
   }, [selectedModel, tfReady]);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{}}>
       <ImageBackground source={sfrsFinalBackground} style={styles.fullScreenBackground}>
-        <ScrollView contentContainerStyle={{ padding: 20 }}>
+        <ScrollView contentContainerStyle={{ flexgrow:1, padding: 20 }}>
           <BackButton />
           <View style={{ alignItems: 'center', marginVertical: 20 }}>
   <Text style={{
@@ -585,9 +585,9 @@ function SFRSGraphScreen({ route, navigation }) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex:1}}>
       <ImageBackground source={sfrsBackground} style={styles.fullScreenBackground}>
-        <View style={styles.sfrsContainer}>
+        <ScrollView contentContainerStyle={styles.sfrsContainer}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
             <Text style={styles.backButtonText}>← Back</Text>
           </TouchableOpacity>
@@ -617,7 +617,7 @@ function SFRSGraphScreen({ route, navigation }) {
             <Text style={[styles.axisLabel, styles.xAxisLabel]}>{xAxisLabel}</Text>
             <Text style={[styles.axisLabel, styles.yAxisLabel]}>{yAxisLabel}</Text>
           </View>
-        </View>
+        </ScrollView>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -1431,7 +1431,7 @@ function ToolScreen({ route, navigation }) {
       finalLogo: require("./assets/eorLogo.png"),
     },
     "About Us":{
-      finalBg: require("./assets/aboutbg.png"),
+      finalBg: require("./assets/abtbg.png"),
       finalLogo: require("./assets/LogoOnlyFinalUI.png"),
     },
     "How To Use":{
@@ -1502,7 +1502,7 @@ function ToolScreen({ route, navigation }) {
 
   if (screenName === "Enhanced Oil Recovery Planner" && !isLoading) {
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1}}>
         <ImageBackground source={backgroundImage} style={styles.fullScreenBackground}>
           <EORStack />
         </ImageBackground>
@@ -1545,7 +1545,7 @@ function ResultScreen({ route }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground source={eorFinalBackground} style={styles.fullScreenBackground}>
-        <View style={styles.eorContainer}>
+        <ScrollView contentContainerStyle={styles.eorContainer}>
         <BackButton />
           <Text style={[styles.eorscreenTitle, { color: '#411E38' }, {marginTop: 50},{fontSize: 36}]}>Calculated Result</Text>
            <Text style={styles.eorselectedmodel}> {selectedModel} </Text>
@@ -1559,7 +1559,7 @@ function ResultScreen({ route }) {
             Result: {result?.toFixed(2)} %
           </Text>
         </View>
-        </View>
+        </ScrollView>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -1690,7 +1690,7 @@ function GraphScreen({ route, navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground source={eorFinalBackground} style={styles.fullScreenBackground}>
-        <View style={styles.eorContainer}>
+        <ScrollView contentContainerStyle={styles.eorContainer}>
           <BackButton />
           <Text style={styles.eorscreenTitle}>Graphical Representation</Text>
           {/* Adjusted margin-top to move the graph lower */}
@@ -1719,7 +1719,7 @@ function GraphScreen({ route, navigation }) {
             <Text style={[styles.eoraxisLabel, styles.eorxAxisLabel]}>{xAxisLabel}</Text>
             <Text style={[styles.eoraxisLabel, styles.eoryAxisLabel]}>{yAxisLabel}</Text>
           </View>
-        </View>
+        </ScrollView>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -2155,7 +2155,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    fontFamily: "Cave Age",
+    fontFamily: "Roboto",
   },
   mscreenContainer: {
     flex: 1,
@@ -2212,7 +2212,7 @@ const styles = StyleSheet.create({
   sfrsresultsContainer: {justifyContent: "center"},
   sfrsresultsText: {justifyContent: "center"},
   sfrsscreenTitle: {fontSize: 24,fontWeight: "bold", color: "white",marginBottom: 10,textAlign:"center"},
-  sfrschartContainer: {marginTop: 20,justifyContent: "center",alignItems: "center"
+  sfrschartContainer: {marginTop: 20,justifyContent: "center",alignItems: "center",backgroundcolor:"transparent"
   },
   eorscreenTitle: {
     fontSize: 30,
@@ -2323,6 +2323,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     justifyContent: "center",
     alignItems: "center",
+    backggroundColor: "transparent"
   },
   title: {
     fontSize: 28,
@@ -2369,7 +2370,7 @@ const styles = StyleSheet.create({
   borderTopRightRadius: 10,
   paddingVertical: 20,
   paddingHorizontal: 40,
-  minHeight: 120,
+  minHeight: 100,
   justifyContent: "center",
 },
   sectionTitle: {
@@ -2504,7 +2505,7 @@ const styles = StyleSheet.create({
   gwmodalButtonText: { color: "#000", fontWeight: "bold" },
   gwresultsText: {fontSize: 16,color: '#333',backgroundColor: '#f1f8e9',borderRadius: 6,paddingVertical: 4,paddingHorizontal: 10,marginBottom: 5,textAlign: 'center',fontWeight: '500'},
   gwscreenTitle: {fontSize: 24,fontWeight: "bold", color: "white", marginBottom: 10, textAlign:"center"},
-  gwchartContainer: {marginTop: 20,justifyContent: "center",alignItems: "center"},
+  gwchartContainer: {marginTop: 20,justifyContent: "center",alignItems: "center",backgroundColor:"transparent"},
   gwresultcontainer: {padding: 20, alignItems: 'center'},
   gwresultCalculation:{fontSize: 28,fontWeight: 'bold',color: '#00796b',marginBottom: 18,textAlign: 'center', fontFamily: 'System',letterSpacing:1, textShadowColor:'#b2dfdb', textShadowOffset:{width: 1, height: 1}, textShadowRadius: 2},
   gwresultsModel:{fontSize: 20,color: '#333', marginBottom: 10,textAlign: 'center',fontWeight: '600',backgroundColor: '#e0f2f1',borderRadius: 8,padding: 6},

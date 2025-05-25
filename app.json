@@ -1,12 +1,19 @@
 {
   "expo": {
-    "name": "SFR",
+    "name": "NeoFlow",
     "slug": "SFR",
     "version": "1.0.0",
     "extra": {
       "eas": {
         "projectId": "97eed795-be21-487b-be84-cd32c339355f"
       }
-    }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/97eed795-be21-487b-be84-cd32c339355f"
+    },
+    "android": {},
+    "ios": {},
+    "owner": "sammiee03312004"
   }
 }
