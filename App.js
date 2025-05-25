@@ -14,16 +14,16 @@ import * as tf from '@tensorflow/tfjs';
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const screenWidth = Dimensions.get("window").width;
-const initialBackground = require("./assets/loadingbgui.svg");
-const newBackground = require("./assets/bgfinalui.svg");
-const initialLogo = require("./assets/LogoOnlyFinalUI.svg");
-const newLogo = require("./assets/LogoOnly.svg");
-const htuBackground = require("./assets/htubg.svg")
-const gwFinalBackground = require("./assets/gwnew.svg");
-const aboutBackground = require("./assets/aboutbg.svg")
-const srfsLogo = require("./assets/srfsLogo.svg");
-const gwLogo = require("./assets/gwLogo.svg");
-const eorLogo = require("./assets/eorLogo.svg"); 
+const initialBackground = require("./assets/loadingbgui.png");
+const newBackground = require("./assets/bgfinalui.png");
+const initialLogo = require("./assets/LogoOnlyFinalUI.png");
+const newLogo = require("./assets/LogoOnly.png");
+const htuBackground = require("./assets/htubg.png")
+const gwFinalBackground = require("./assets/gwnew.png");
+const aboutBackground = require("./assets/aboutbg.png")
+const srfsLogo = require("./assets/srfsLogo.png");
+const gwLogo = require("./assets/gwLogo.png");
+const eorLogo = require("./assets/eorLogo.png"); 
 
 function BackButton() {
   const navigation = useNavigation(); 
@@ -103,7 +103,7 @@ function SFRSScreen({navigation}) {
   };
 
   return (
-    <ImageBackground source={require('./assets/sfrsnew.svg')} style={styles.fullScreenBackground}>
+    <ImageBackground source={require('./assets/sfrsnew.png')} style={styles.fullScreenBackground}>
       <ScrollView contentContainerStyle={styles.sfrscontainer}>
         <View style={styles.sfrsrow}>
           <View style={styles.sfrsleftPane}>
@@ -177,7 +177,7 @@ function SFRSResultScreen({ route }) {
   const navigation = useNavigation();
   const { selectedModel, inputValues, result } = route.params;
  return (
-    <ImageBackground source={require('./assets/sfrsnew.svg')} style={styles.fullScreenBackground}>
+    <ImageBackground source={require('./assets/sfrsnew.png')} style={styles.fullScreenBackground}>
       <ScrollView contentContainerStyle={styles.sfrsresultsContainer}>
 
           <Text style={{
@@ -243,7 +243,7 @@ function SFRSResultScreen({ route }) {
 
 function SFRSAIScreen({ route }) {
   const navigation = useNavigation();
-  const sfrsFinalBackground = require("./assets/sfrsnew.svg");
+  const sfrsFinalBackground = require("./assets/sfrsnew.png");
   const { selectedModel, inputValues } = route.params || {};
   const [predictedParams, setPredictedParams] = useState(null);
   const [tfReady, setTfReady] = useState(false);
@@ -433,7 +433,7 @@ function SFRSAIScreen({ route }) {
 function SFRSGraphScreen({ route, navigation }) {
   const { selectedModel = "", inputValues = {}, calculatedResult = null } = route.params || {};
 
-  const sfrsBackground = require("./assets/sfrsnew.svg");
+  const sfrsBackground = require("./assets/sfrsnew.png");
 
   let graphLabels = [];
   let graphData = [];
@@ -709,7 +709,7 @@ function GeothermalWellScreen({ navigation }) {
 };
 
   return (
-    <ImageBackground source={require('./assets/gwnew.svg')} style={styles.fullScreenBackground}resizeMode="cover">
+    <ImageBackground source={require('./assets/gwnew.png')} style={styles.fullScreenBackground}resizeMode="cover">
       <ScrollView contentContainerStyle={styles.gwcontainer}>
         <View style={styles.gwrow}>
           <View style={styles.gwleftPane}>
@@ -782,7 +782,7 @@ function ResultsScreen({ route }) {
 
   return (
     <ImageBackground
-      source={require('./assets/gwnew.svg')}
+      source={require('./assets/gwnew.png')}
       style={styles.fullScreenBackground}resizeMode="cover"
     >
       <View style={styles.gwoverlay} />
@@ -951,7 +951,7 @@ function SimplePredictorScreen({ route }) {
   const impact = getVariableImpact();
 
   return (
-      <ImageBackground source={require('./assets/gwnew.svg')} style={styles.fullScreenBackground}resizeMode="cover">
+      <ImageBackground source={require('./assets/gwnew.png')} style={styles.fullScreenBackground}resizeMode="cover">
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
           <View style={styles.gwpredictorBox}>
             <Text style={styles.gwpredictorwell}>Geothermal Well Prediction</Text>
@@ -1007,7 +1007,7 @@ function SimplePredictorScreen({ route }) {
 function GraphsScreen({ route, navigation }) {
   const { selectedModel = "", inputValues = {}, calculatedResult = null } = route.params || {};
 
-  const gwBackground = require("./assets/gwnew.svg");
+  const gwBackground = require("./assets/gwnew.png");
 
   let graphLabels = [];
   let graphData = [];
@@ -1253,7 +1253,7 @@ function EORScreen({ navigation }) {
   
 
   return (
-    <ImageBackground source={require('./assets/eornew.svg')} style={styles.fullScreenBackground}>
+    <ImageBackground source={require('./assets/eornew.png')} style={styles.fullScreenBackground}>
       <ScrollView contentContainerStyle={styles.eorcontainer}>
         <View style={styles.eorrow}>
           <View style={styles.eorleftPane}>
@@ -1413,30 +1413,30 @@ function ToolScreen({ route, navigation }) {
 
   const toolAssets = {
     "Smart Fluid Rheology Simulator": {
-      loadingBg: require("./assets/SRFSBG.svg"),
-      finalBg: require("./assets/sfrsnew.svg"),
-      loadingLogo: require("./assets/srfsloadinglogo.svg"),
-      finalLogo: require("./assets/srfsLogo.svg"),
+      loadingBg: require("./assets/SRFSBG.png"),
+      finalBg: require("./assets/sfrsnew.png"),
+      loadingLogo: require("./assets/srfsloadinglogo.png"),
+      finalLogo: require("./assets/srfsLogo.png"),
     },
     "Geothermal Well Optimization Tool": {
-      loadingBg: require("./assets/GWBG.svg"),
-      finalBg: require("./assets/gwnew.svg"),
-      loadingLogo: require("./assets/gwloadinglogo.svg"),
-      finalLogo: require("./assets/gwLogo.svg"),
+      loadingBg: require("./assets/GWBG.png"),
+      finalBg: require("./assets/gwnew.png"),
+      loadingLogo: require("./assets/gwloadinglogo.png"),
+      finalLogo: require("./assets/gwLogo.png"),
     },
     "Enhanced Oil Recovery Planner": {
-      loadingBg: require("./assets/EORBG.svg"),
-      finalBg: require("./assets/eornew.svg"),
-      loadingLogo: require("./assets/eorloadinglogo.svg"),
-      finalLogo: require("./assets/eorLogo.svg"),
+      loadingBg: require("./assets/EORBG.png"),
+      finalBg: require("./assets/eornew.png"),
+      loadingLogo: require("./assets/eorloadinglogo.png"),
+      finalLogo: require("./assets/eorLogo.png"),
     },
     "About Us":{
-      finalBg: require("./assets/aboutbg.svg"),
-      finalLogo: require("./assets/LogoOnlyFinalUI.svg"),
+      finalBg: require("./assets/aboutbg.png"),
+      finalLogo: require("./assets/LogoOnlyFinalUI.png"),
     },
     "How To Use":{
-      finalBg: require("./assets/htubg.svg"),
-      finalLogo: require("./assets/LogoOnlyFinalUI.svg"),
+      finalBg: require("./assets/htubg.png"),
+      finalLogo: require("./assets/LogoOnlyFinalUI.png"),
     }
   };
 
@@ -1540,7 +1540,7 @@ if (screenName === "How To Use" && !isLoading) {
 function ResultScreen({ route }) {
   const navigation = useNavigation()
   const { selectedModel, inputValues, result } = route.params;
-  const eorFinalBackground = require("./assets/eornew.svg");
+  const eorFinalBackground = require("./assets/eornew.png");
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -1568,7 +1568,7 @@ function ResultScreen({ route }) {
 function GraphScreen({ route, navigation }) {
   const { selectedModel = "", inputValues = {},calculatedResult = null } = route.params || {};
 
-  const eorFinalBackground = require("./assets/eornew.svg");
+  const eorFinalBackground = require("./assets/eornew.png");
 
   let graphLabels = [];
   let graphData = [];
@@ -1726,7 +1726,7 @@ function GraphScreen({ route, navigation }) {
 }
 
 function AIScreen({ route, navigation }) {
-  const eorFinalBackground = require("./assets/eornew.svg");
+  const eorFinalBackground = require("./assets/eornew.png");
   const { selectedModel, inputValues } = route.params;
 
   const [predictedResult, setPredictedResult] = useState(null);
